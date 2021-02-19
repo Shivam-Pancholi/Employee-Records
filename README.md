@@ -66,7 +66,7 @@ If you don't add this static files url and directory path your admin page will n
 Now open Files tab in home page.
 * Click on Employee-Records -> Company -> settings.py.
 * Scroll in settings.py file to Allowed Hosts list.
-* Add Your domain name in allowed host like that :- ```py ALLOWED_HOSTS = ['Domain-Name.com',]```
+* Add Your domain name in allowed host like that :- ```ALLOWED_HOSTS = ['Domain-Name.com',]```
 * Set Debug = False
 Now go open Web tab reload your domain link.
 * Now bowse your Domain, your website is deployed.
