@@ -7,14 +7,16 @@ You can Keep records like Employee Id, Name, Surname, Job Title, Email and Addre
 * Create an Account on [Python Anywhere](https://www.pythonanywhere.com/) and login.
 * Click on Bash in Consoles tab.
 * In the bash terminal use this commands.
-  * mkvirtualenv --python==3.7.7 <virtualenv_name>
-  * pip install -U django
-  * git clone https://github.com/Shivam-Pancholi/Employee-Records.git
-  * cd EmployeeList
-  * python manage.py makemigrations
-  * python manage.py migrate
-  * python manage.py createsuperuser
-  * Fill out the fields to create super user.
+'''sh
+  mkvirtualenv --python==3.7.7 <virtualenv_name>
+  pip install -U django
+  git clone https://github.com/Shivam-Pancholi/Employee-Records.git
+  cd EmployeeList
+  python manage.py makemigrations
+  python manage.py migrate
+  python manage.py createsuperuser
+  Fill out the fields to create super user.
+ '''
  
 ## Setting up the Web App Domain Name
 * Click on Dashboard in upper-right corner of the page.
@@ -32,6 +34,10 @@ Here you will see a default domain name for this app but if you want to use your
 * Select Next.
 * Now in Web tab scroll to Virtualenvs section.
 * Write path to virtualenv i.e. /home/<your_username>/.virtualenvs/<virtualenv_name>/ and click Check.
+* Scroll down to Static files section.
+If you don't add this static files url and directory path your admin page will not look like before it will be loaded in basic html formet.
+* Add URL as /static/admin.
+* Add Directory as /home/<your_username>/.virtualenv/<virtualenv_name>/lib/python3.7/site-packages/django/contrib/admin/static/admin.
 * Scroll up to Code section.
 * Write path to the source code i.e. /home/<your_username>/Employee-Records/ and click Check.
 * Now click on link to WSGI configuration file.
@@ -39,7 +45,7 @@ Here you will see a default domain name for this app but if you want to use your
 * Click Save on upper right corner.
 * Now browse your Domain, your website is deployed.
 * 
-'''Python'''
+'''Py
 
 import os
 import sys
