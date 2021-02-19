@@ -68,7 +68,7 @@ Now open Files tab in home page.
 * Scroll in settings.py file to Allowed Hosts list.
 * Add Your domain name in allowed host like that :- ALLOWED_HOSTS = ['Domain-Name.com',]
 * Set Debug = False
-Now go open Web tab 
+Now go open Web tab reload your domain link.
 * Now bowse your Domain, your website is deployed.
 
 ## How to use this app.
