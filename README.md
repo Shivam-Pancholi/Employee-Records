@@ -6,24 +6,28 @@ You can Keep records like Employee Id, Name, Surname, Job Title, Email and Addre
 
 ### Steps to Login.
 
-+Create a User Account by Sign Up.
-+Login to your account.
+1.Create a User Account by Sign Up.
+2.Fill all required fields.
+3.Click Register.
+4.Click Sign In.
+5.Enter username and Password.
+6.Click Log In.
 
 ### Steps to Add a new Employee.
 
-*Click on Add Employee to add a new employee.
-*Fill out the details.
-*Click save.
+1.Click on Add Employee to add a new employee.
+2.Fill out the details.
+3.Click save.
 
 ### Steps to Update or Edit deatils of an Employee.
 
-*Click on name of the employee.
-*Click on Edit button.
-*Edit the desired fields.
-*Click save.
+1.Click on name of the employee.
+2.Click on Edit button.
+3.Edit the desired fields.
+4.Click save.
 
 ### Steps to Delete an Employee Record.
 
-*Click on name of the employee.
-*Click on Delete button.
-*Click confirm.
+1.Click on name of the employee.
+2.Click on Delete button.
+3.Click confirm.
