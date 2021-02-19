@@ -7,7 +7,7 @@ You can Keep records like Employee Id, Name, Surname, Job Title, Email and Addre
 * Create an Account on [Python Anywhere](https://www.pythonanywhere.com/) and login.
 * Click on Bash in Consoles tab.
 * In the bash terminal use this commands.
-'''sh
+'''shell
   mkvirtualenv --python==3.7.7 <virtualenv_name>
   pip install -U django
   git clone https://github.com/Shivam-Pancholi/Employee-Records.git
