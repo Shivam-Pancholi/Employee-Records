@@ -1,0 +1,18 @@
+{% extends 'EmployeeList/index.html' %}
+{% block content %}
+
+<div class="jumbotron">
+    {% if registered %}
+        <h3>Thank you for registering</h3>
+    {% else %}
+        <h2>Register here!</h2><hr/>
+        <form enctype="multipart/form_data" method="post" >
+            {% csrf_token %}
+            {{ user_form.as_p }}
+            <input type="submit" value="Register">
+        </form>
+
+    {% endif %}
+</div>
+
+{% endblock %}

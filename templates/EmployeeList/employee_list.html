@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% extends 'EmployeeList/index.html' %}
+
+    {% block title %}
+    <title>Employees</title>
+    {% endblock %}
+    {% block content %}
+
+    {% csrf_token %}
+    <div class='list_view'>
+        <div class="container jumbotron">
+
+            <h2  > Employee List </h2><hr/><hr/>
+
+                <div class="employee" border='1px'>
+                    <table class='table  table-responsive{-sm|-md}'>
+                        <tr class='table active'>
+                            <th>EmployeeId</th>
+                            <th>Name</th>
+                            <th>Surname</th>
+                            <th>Job Title</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Address</th>
+                        </tr>
+            {% for emp in employee_list %}
+
+                        <tr>
+                            <td>{{ emp.employee_id }}</td>
+                            <td><a href="{% url 'EmployeeList:emp_detail_view' pk=emp.pk %}">{{ emp.name }}</a></td>
+                            <td>{{ emp.surname }}</td>
+                            <td>{{ emp.job_title }}</td>
+                            <td>{{ emp.email }}</td>
+                            <td>{{ emp.phone }}</td>
+                            <td>{{ emp.address }}</td>
+                        </tr>
+                </div>
+            {% endfor%}
+
+        </div>
+    </div>
+    {% endblock %}

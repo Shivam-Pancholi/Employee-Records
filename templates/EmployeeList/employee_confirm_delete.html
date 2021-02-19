@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% extends 'EmployeeList/index.html' %}
+
+    {% block title %}
+        <title>delete</title>
+    {% endblock %}
+
+    {% block content %}
+    
+        <!-- Delete Warning-->
+        <div class='container jumbotron'>
+            <form method="POST">
+                {% csrf_token %} 
+                <p>Are you sure you want to delete {{ object }}</p>
+                <input type="submit" class="btn btn-danger" value="Confirm">
+            </form>
+        </div>
+
+{% endblock %}

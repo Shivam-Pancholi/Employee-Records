@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% extends 'EmployeeList/index.html' %}
+
+{% block title %}
+  <title>login!</title>
+{% endblock %}
+
+{% block content %}
+
+    <div class="jumbotron centerstage">
+        <h3>Please Login!</h3><hr/>
+
+        {% if form.errors %}
+            <p>Your Username and Password doesn't match!! Please try again!</p>
+        {% endif %}
+
+        <form action="{% url 'EmployeeList:login'%}" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+                <input type="submit" class="btn btn-primary" value="login">
+                <input type="hidden" name="next" value="{{next}}">
+        </form>
+
+    </div>
+
+{% endblock %}

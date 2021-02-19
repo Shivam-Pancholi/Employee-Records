@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+        
+      {% block title %}
+      {% endblock %}
+
+    <!--    BOOTSTRAP-->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+    <!--    Custom Css-->
+    <link rel="stylesheet" href="{% static 'css/index.css'%}">
+
+  </head>
+  <body>
+
+      <!--NAVBAR-->
+      <nav class="navbar navbar-default">
+          
+          <div class="container">
+              
+              <ul class="nav navbar-nav">
+                  <li><a class="navbar-brand bigbrand" href="{% url 'EmployeeList:emp_list_view' %}">Company</a></li>
+                  <li><a class="navbar" href="{% url 'EmployeeList:emp_list_view' %}"><span class='glyphicon glyphicon-home'></span></a></li>
+              </ul>
+              
+              <ul class="nav navbar-nav navbar-right">
+
+                  <!--Only when user is Authenticated-->
+                  {% if user.is_authenticated %}
+                  <li><a href="{% url 'EmployeeList:emp_create_view' %}">Add Employee</a></li>
+                  <li><a href="{% url 'EmployeeList:logout' %}">Log Out</a></li>
+                  <li><a>Welcome: {{user.username}}</a></li>
+                  {%else%}
+                  <li><a class="nav navbar-right" href="{% url 'EmployeeList:login' %}">Sign In!</a></li>
+                  <li><a class="navbar" href="{% url 'EmployeeList:register' %}">Sign Up!</a></li>
+                  {% endif %}
+              
+              </ul>
+          
+          </div>
+
+      </nav>
+
+      <!--Content Block-->
+      <div class="content centerstage container">
+
+        {% block content %}
+        {% endblock %}
+        
+      </div>
+    
+  </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% extends 'EmployeeList/index.html' %}
+    
+    {% block title %}
+        <title>{{employee.name}}</title>
+    {% endblock %}
+
+    {% block content %}
+
+    {% csrf_token %} 
+
+        <!-- If user Authenticated than show details-->
+        {% if user.is_authenticated %}
+            <div class='container detail_view'>
+
+
+                <div class='jumbotron'>
+                    <h2>{{employee.name}} {{employee.surname}}</h2> <!-- Title -->
+                 
+                    <table class='table'>
+                            <td><h3>Employee ID</h3></td>
+                            <td><h3> : {{employee.employee_id}}</h3></td>
+                        </tr>
+                        <tr>
+                            <td><h3>Job Title</h3></td>
+                            <td><h3> : {{employee.job_title}}</h3></td>
+                        </tr>
+                        <tr>
+                            <td><h3>E-mail</h3></td>
+                            <td><h3> : {{employee.email}}</h3></td>
+                        </tr>
+                        <tr>
+                            <td><h3>Phone</h3></td>
+                            <td><h3> : {{employee.phone}}</h3></td>
+                        </tr>
+                        <tr>
+                            <td><h3>Address</h3></td>
+                            <td><h3> : {{employee.address}}</h3></td>
+                        </tr>
+                    </table>
+                </div>
+                <a class="btn btn-primary update" href="{% url 'EmployeeList:emp_update_view' pk=employee.pk %}">
+                    <span>Edit</span>
+                <a class="btn btn-danger update" href="{% url 'EmployeeList:emp_delete_view' pk=employee.pk %}">
+                    <span>Delete</span>
+                </a>
+            </div>
+
+        {% else %}
+
+            <!-- When user is not Authenticated-->
+            <div class='jumbotron'>
+                <h3>Please Login to see Employee's detail</h3>
+            </div>
+
+        {% endif %}
+    {% endblock %}
