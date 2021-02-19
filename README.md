@@ -71,7 +71,7 @@ Now open Files tab in home page.
 Now go open Web tab reload your domain link.
 * Now bowse your Domain, your website is deployed.
 
-## How to use this app.
+# How to use this app.
 
 ### Steps to Login.
 
