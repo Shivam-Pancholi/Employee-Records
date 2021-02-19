@@ -47,6 +47,8 @@ If you don't add this static files url and directory path your admin page will n
 ```Py
   import os
   import sys
+  import django
+  from django.core.wsgi import get_wsgi_application
 
   path = '/home/<your_user_name>/Employee-Records'
   if path not in sys.path:
@@ -55,10 +57,8 @@ If you don't add this static files url and directory path your admin page will n
   os.chdir(path)
   os.environ.setdefault("DJANGO_SETTINGS_MODULE","Employee-Records/Company.settings")
 
-  import django
   django.setup()
 
-  from django.core.wsgi import get_wsgi_application
   application = get_wsgi_application()
 ```
 * Click Save on upper right corner.
