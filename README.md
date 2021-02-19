@@ -5,8 +5,8 @@ You can Keep records like Employee Id, Name, Surname, Job Title, Email and Addre
 ## How to use this app.
 
 ### Steps to Login.
-*Create a User Account by Sign Up.
-*Login to your account.
++Create a User Account by Sign Up.
++Login to your account.
 
 ### Steps to Add a new Employee.
 *Click on Add Employee to add a new employee.
