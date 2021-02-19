@@ -8,7 +8,7 @@ You can Keep records like Employee Id, Name, Surname, Job Title, Email and Addre
 * Click on Bash in Consoles tab.
 * In the bash terminal use this commands.
 
-'''bash
+```bash
   mkvirtualenv --python==3.7.7 <virtualenv_name>
   pip install -U django
   git clone https://github.com/Shivam-Pancholi/Employee-Records.git
@@ -17,7 +17,7 @@ You can Keep records like Employee Id, Name, Surname, Job Title, Email and Addre
   python manage.py migrate
   python manage.py createsuperuser
   Fill out the fields to create super user.
- '''
+ ```
  
 ## Setting up the Web App Domain Name
 * Click on Dashboard in upper-right corner of the page.
