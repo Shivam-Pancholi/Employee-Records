@@ -43,9 +43,7 @@ If you don't add this static files url and directory path your admin page will n
 * Write path to the source code i.e. /home/<your_username>/Employee-Records/ and click Check.
 * Now click on link to WSGI configuration file.
 * End type bellow available code. Note :- Make sure a lot of code is already availbale in this file in commented for you just have to uncomment those.
-* Click Save on upper right corner.
-* Now browse your Domain, your website is deployed.
-* 
+
 ```Py
   import os
   import sys
@@ -63,6 +61,15 @@ If you don't add this static files url and directory path your admin page will n
   from django.core.wsgi import get_wsgi_application
   application = get_wsgi_application()
 ```
+* Click Save on upper right corner.
+
+Now open Files tab in home page.
+* Click on Employee-Records -> Company -> settings.py.
+* Scroll in settings.py file to Allowed Hosts list.
+* Add Your domain name in allowed host like that :- ALLOWED_HOSTS = ['Domain-Name.com',]
+* Set Debug = False
+Now go open Web tab 
+* Now bowse your Domain, your website is deployed.
 
 ## How to use this app.
 
