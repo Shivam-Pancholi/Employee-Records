@@ -2,32 +2,89 @@
 This is a django based Web App for keeping records of Employees of a company.  
 You can Keep records like Employee Id, Name, Surname, Job Title, Email and Address.
 
+# Instructions to Deploy this Web App on Python Anywhere
+
+* Create an Account on [Python Anywhere](https://www.pythonanywhere.com/) and login.
+* Click on Bash in Consoles tab.
+* In the bash terminal use this commands.
+  * mkvirtualenv --python==3.7.7 <virtualenv_name>
+  * pip install -U django
+  * git clone https://github.com/Shivam-Pancholi/Employee-Records.git
+  * cd EmployeeList
+  * python manage.py makemigrations
+  * python manage.py migrate
+  * python manage.py createsuperuser
+  * Fill out the fields to create super user.
+ 
+## Setting up the Web App Domain Name
+* Click on Dashboard in upper-right corner of the page.
+* Go to Web tab.
+* CLick on Add a new web app.
+
+Here you will see a default domain name for this app but if you want to use your own domain name than follow this steps.
+[Setting up the Custome Domain Name](https://help.pythonanywhere.com/pages/CustomDomains/)
+
+* If you dont have your custome doamin name use the default domain name which is visible to you.
+* Click on next.
+* Select Django as python web framework in the list.
+* Selct manual configuration.
+* Select python version 3.7.
+* Select Next.
+* Now in Web tab scroll to Virtualenvs section.
+* Write path to virtualenv i.e. /home/<your_username>/.virtualenvs/<virtualenv_name>/ and click Check.
+* Scroll up to Code section.
+* Write path to the source code i.e. /home/<your_username>/Employee-Records/ and click Check.
+* Now click on link to WSGI configuration file.
+* End type bellow available code. Note :- Make sure a lot of code is already availbale in this file in commented for you just have to uncomment those.
+* Click Save on upper right corner.
+* Now browse your Domain, your website is deployed.
+* 
+'''Python'''
+
+import os
+import sys
+
+path = '/home/<your_user_name>/Employee-Records'
+if path not in sys.path:
+    sys.path.append(path)
+
+os.chdir(path)
+os.environ.setdefault("DJANGO_SETTINGS_MODULE","Employee-Records/Company.settings")
+
+import django
+django.setup()
+
+from django.core.wsgi import get_wsgi_application
+application = get_wsgi_application()
+
+'''
+
 ## How to use this app.
 
 ### Steps to Login.
 
-1.Create a User Account by Sign Up.  
-2.Fill all required fields.  
-3.Click Register.  
-4.Click Sign In.  
-5.Enter username and Password.  
-6.Click Log In.  
+* Create a User Account by Sign Up.  
+* Fill all required fields.  
+* Click Register.  
+* Click Sign In.  
+* Enter username and Password.  
+* Click Log In.  
 
 ### Steps to Add a new Employee.
 
-1.Click on Add Employee to add a new employee.  
-2.Fill out the details.  
-3.Click save.  
+* Click on Add Employee to add a new employee.  
+* Fill out the details.  
+* Click save.  
 
 ### Steps to Update or Edit deatils of an Employee.
 
-1.Click on name of the employee.  
-2.Click on Edit button.  
-3.Edit the desired fields.  
-4.Click save.  
+* Click on name of the employee.  
+* Click on Edit button.  
+* Edit the desired fields.  
+* Click save.  
 
 ### Steps to Delete an Employee Record.
 
-1.Click on name of the employee.  
-2.Click on Delete button.  
-3.Click confirm.  
+* Click on name of the employee.  
+* Click on Delete button.  
+* Click confirm.  
